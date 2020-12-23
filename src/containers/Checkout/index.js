@@ -17,6 +17,6 @@ const Checkout = () => (
       <button type="button">Continuar pedido</button>
     </div>
   </section>
-  )
+)
 
 export default Checkout
