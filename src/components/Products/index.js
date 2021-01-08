@@ -8,7 +8,7 @@ const Products = () => {
   const { state, addToCart } = useContext(AppContext)
   const { products } = state
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = product => () => {
     addToCart(product)
   }
 
