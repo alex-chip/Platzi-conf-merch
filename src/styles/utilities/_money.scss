@@ -1,0 +1,14 @@
+.icon-money {
+  &::before {
+    content: '$';
+    margin-right: .5rem;
+    font-size: .8rem;
+  }
+}
+
+.icon-trash {
+  color: red;
+  &:hover {
+    color: red;
+  }
+}

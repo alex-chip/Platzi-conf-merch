@@ -28,20 +28,19 @@ const Checkout = () => {
           <div key={item.id} className="Checkout-item">
             <div className="Checkout-element">
               <h4>{item.title}</h4>
-              <span>
-                $
+              <span className='icon-money'>
                 {item.price}
               </span>
             </div>
             <button type="button" onClick={handleRemove(item, index)}>
-              <i className='fas fa-trash-alt' />
+              <i className='icon-trash fas fa-trash-alt' />
             </button>
           </div>
         ))}
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
-          <h3>{`Precio Total: $ ${handleSumTotal}`}</h3>
+          <h3 className='icon-money'>{`Precio Total: ${handleSumTotal}`}</h3>
           <Link to='/checkout/information'>
             <button type="button">Continuar pedido</button>
           </Link>
