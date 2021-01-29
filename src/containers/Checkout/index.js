@@ -1,6 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import AppContext from '../../context/AppContext'
+import handleSumTotal from '../../utils/sumTotal'
 
 const Checkout = () => {
   const { state: { cart }, removeFromCart } = useContext(AppContext)
@@ -13,12 +14,6 @@ const Checkout = () => {
   const handleRemove = (product, index) => () => {
     removeFromCart(product, index)
   }
-
-  const handleSumTotal = useMemo(() =>
-    cart.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0)
-    // const sum = cart.reduce(reducer, 0)
-    // return sum
-  , [cart])
 
   return (
     <section className="Checkout">
@@ -40,7 +35,7 @@ const Checkout = () => {
       </div>
       {cart.length > 0 && (
         <div className="Checkout-sidebar">
-          <h3 className='icon-money'>{`Precio Total: ${handleSumTotal}`}</h3>
+          <h3 className='icon-money'>{`Precio Total: ${handleSumTotal(cart)}`}</h3>
           <Link to='/checkout/information'>
             <button type="button">Continuar pedido</button>
           </Link>

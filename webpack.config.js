@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -51,6 +52,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
     }),
+    new Dotenv()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
