@@ -10,7 +10,7 @@ const Payment = () => {
   const history = useHistory()
 
   const paypalOptions = {
-    clientId: process.env.APP_CLIENT_ID,
+    clientId: process.env.APY_KEY_PAYPAL,
     intent: 'capture',
     currency: 'USD',
   }
@@ -21,7 +21,7 @@ const Payment = () => {
   }
 
   const handlePaymentSuccess = data => {
-    console.log(data)
+    // console.log(data)
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
