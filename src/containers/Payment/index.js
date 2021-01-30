@@ -18,7 +18,10 @@ const Payment = () => {
 
   const buttonStyles = {
     layout: 'vertical',
-    shape: 'rect'
+    color: 'blue',
+    shape: 'pill',
+    label: 'paypal',
+    tagline: true
   }
 
   const handlePaymentSuccess = data => {
