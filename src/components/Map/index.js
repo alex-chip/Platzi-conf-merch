@@ -1,19 +1,20 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 import React from 'react'
+import config from '../../../config'
 
-const Map = () => {
+const Map = ({ data }) => {
   const mapStyle = {
     height: '50vh',
     width: '100%'
   }
 
   const defaultCenter = {
-    lat: 19.4267261,
-    lng: -99.1718796
+    lat: data.lat,
+    lng: data.lng
   }
 
   return (
-    <LoadScript googleMapsApiKey={`${process.env.API_KEY_GOOGLE_MAP}`}>
+    <LoadScript googleMapsApiKey={config.apiKeyGoogle}>
       <GoogleMap
         mapContainerStyle={mapStyle}
         zoom={9}

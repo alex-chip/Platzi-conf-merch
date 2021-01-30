@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { PayPalButton } from 'react-paypal-button'
 import { useHistory } from 'react-router-dom'
+import config from '../../../config'
 import AppContext from '../../context/AppContext'
 import handleSumTotal from '../../utils/sumTotal'
 
@@ -10,7 +11,7 @@ const Payment = () => {
   const history = useHistory()
 
   const paypalOptions = {
-    clientId: process.env.APY_KEY_PAYPAL,
+    clientId: config.apiKeyPaypal,
     intent: 'capture',
     currency: 'USD',
   }
